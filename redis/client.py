@@ -623,6 +623,11 @@ class StrictRedis(object):
                 (end is not None and start is None):
             raise RedisError("Both start and end must be specified")
         return self.execute_command('BITCOUNT', *params)
+        SCAN / HSCAN / ZSCAN / SSCAN
+        
+        
+    def scan(self):
+        return self.execute_command('SCAN')
 
     def bitop(self, operation, dest, *keys):
         """
